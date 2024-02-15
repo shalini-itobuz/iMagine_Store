@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link rel="stylesheet" href="register.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "tjDSvKBQLIq3oH_EH",
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Registration Form</h1>
+      <form id="registration-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div class="form-group otp-group">
+          <label for="otp">OTP:</label>
+          <input type="text" id="otp" name="otp" />
+          <button type="button" id="generate-otp">Generate OTP</button>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <!-- <script src="script.js" type="module"></script> -->
+    <script src="register.js" type="module"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    </body>
+    </html>
