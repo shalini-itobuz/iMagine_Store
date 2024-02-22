@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("login-form");
-
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
   loginForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
 
     // Retrieve users from local storage
     const users = JSON.parse(localStorage.getItem("users")) || [];
