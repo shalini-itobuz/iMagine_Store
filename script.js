@@ -53,7 +53,7 @@ function initApp() {
     document.getElementById("user").textContent = preuser;
     reloadCart();
   }
-  if (preuser == null) {
+  if (preuser === null) {
     window.location.href = 'login.html';
   }
   else {
