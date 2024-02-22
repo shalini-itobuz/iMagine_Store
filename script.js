@@ -13,11 +13,11 @@ const replies = {
   "how are you?": "I'm doing well, thnks for asking! What abt u?",
   "bye": "Goodbye! Have a great day!",
   "help": "1. Adding product to cart problem .\n2. Remove from cart . \n 3. Increase product quantity.\n 4.Search for a particular product. \n 5. Problems more than above contavt us on our tollfree helpline number- 1800 256 178 .PRESS THE OPTION NUMBER TO CONTINUE",
-  "1":"Press Add to Cart button on the bottom of each product card. Once clicked it will show In Basket",
-  "2":"To remove you need to click on cart button on top right of the page and click on + or - icon to adjust quantity or delete the item",
-  "3":"Click on + or - button on top right cart section to adjust quantity as per user requirement.",
-  "4":"On top middle see a search field in that type keywords of the product to search for it.",
-  "5":"Feel free to reach us at our tollfree number: 1800 256 178 ",
+  "1": "Press Add to Cart button on the bottom of each product card. Once clicked it will show In Basket",
+  "2": "To remove you need to click on cart button on top right of the page and click on + or - icon to adjust quantity or delete the item",
+  "3": "Click on + or - button on top right cart section to adjust quantity as per user requirement.",
+  "4": "On top middle see a search field in that type keywords of the product to search for it.",
+  "5": "Feel free to reach us at our tollfree number: 1800 256 178 ",
   "default": "I'm sorry, I didn't understand that."
 };
 const chatMessages = document.getElementById("chat-messages");
@@ -253,15 +253,15 @@ function sendMessage() {
 
 }
 
-  sendButton.addEventListener("click", ()=>{
-    sendMessage();
-  })
+sendButton.addEventListener("click", () => {
+  sendMessage();
+})
 
-  userInput.addEventListener('keyup', (e)=>{
-    if(e.key === "Enter")
-      sendMessage();
-  })
-  
+userInput.addEventListener('keyup', (e) => {
+  if (e.key === "Enter")
+    sendMessage();
+})
+
 
 
 

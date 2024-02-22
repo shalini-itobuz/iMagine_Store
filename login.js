@@ -30,10 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const registerButton = document.querySelector('.register-btn');
-  
-    registerButton.addEventListener('click', function() {
+
+    registerButton.addEventListener('click', function () {
         window.location.href = 'register.html';
     });
-  });
+});

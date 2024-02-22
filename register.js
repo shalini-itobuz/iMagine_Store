@@ -5,7 +5,7 @@ function generateOTP() {
 
 // Function to send an email
 function sendEmail(email, otp) {
-    
+
     emailjs
         .send("service_efj2459", "template_ab8m40i", {
             to_email: email,
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const emailInput = document.getElementById("email");
         const email = emailInput.value;
         const generatedOTP = generateOTP();
-        sendEmail(email, generatedOTP); 
+        sendEmail(email, generatedOTP);
         alert("OTP has been sent to your email.");
         sessionStorage.setItem("generatedOTP", generatedOTP);
         sessionStorage.setItem("registeredEmail", email); // Store registered email for validation
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const password = document.getElementById("password").value;
 
             // Check if the user already exists
-            
+
             const existingUser = users.find((user) => user.username === username);
             if (existingUser) {
                 console.log("User already exists, cannot register again with the same username.");
@@ -77,10 +77,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert(`User already exists, with username ${users[existingUserIndex].username}. Please Login`);
                 return;
             }
-            
+
             // If the user does not exist
             users.push({ email, username, password });
-            
+
             //  array of users to local storage
             localStorage.setItem("users", JSON.stringify(users));
             // Redirect to the login section
