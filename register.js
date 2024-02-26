@@ -1,13 +1,3 @@
-const email = document.getElementById("email").value;
-const enteredOTP = document.getElementById("otp").value;
-const generatedOTP = sessionStorage.getItem("generatedOTP");
-const generateOTPButton = document.getElementById("generate-otp");
-const registrationForm = document.getElementById("registration-form");
-const emailInput = document.getElementById("email");
-// Retrieve user input
-const username = document.getElementById("name").value;
-const password = document.getElementById("password").value;
-
 // Function to generate a random OTP
 function generateOTP() {
     return Math.floor(100000 + Math.random() * 900000);
@@ -15,7 +5,7 @@ function generateOTP() {
 
 // Function to send an email
 function sendEmail(email, otp) {
-
+    
     emailjs
         .send("service_efj2459", "template_ab8m40i", {
             to_email: email,
@@ -32,12 +22,14 @@ function sendEmail(email, otp) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-
+    const generateOTPButton = document.getElementById("generate-otp");
+    const registrationForm = document.getElementById("registration-form");
 
     generateOTPButton.addEventListener("click", function () {
+        const emailInput = document.getElementById("email");
         const email = emailInput.value;
         const generatedOTP = generateOTP();
-        sendEmail(email, generatedOTP);
+        sendEmail(email, generatedOTP); 
         alert("OTP has been sent to your email.");
         sessionStorage.setItem("generatedOTP", generatedOTP);
         sessionStorage.setItem("registeredEmail", email); // Store registered email for validation
@@ -45,6 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     registrationForm.addEventListener("submit", function (event) {
         event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const enteredOTP = document.getElementById("otp").value;
+        const generatedOTP = sessionStorage.getItem("generatedOTP");
 
         // Validate if the email entered matches the email used for OTP generation
         const registeredEmail = sessionStorage.getItem("registeredEmail");
@@ -63,10 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
             let users = localStorage.getItem("users");
             users = users ? JSON.parse(users) : [];
 
-
+            // Retrieve user input
+            const username = document.getElementById("name").value;
+            const password = document.getElementById("password").value;
 
             // Check if the user already exists
-
+            
             const existingUser = users.find((user) => user.username === username);
             if (existingUser) {
                 console.log("User already exists, cannot register again with the same username.");
@@ -79,10 +77,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert(`User already exists, with username ${users[existingUserIndex].username}. Please Login`);
                 return;
             }
-
+            
             // If the user does not exist
             users.push({ email, username, password });
-
+            
             //  array of users to local storage
             localStorage.setItem("users", JSON.stringify(users));
             // Redirect to the login section

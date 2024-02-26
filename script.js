@@ -10,7 +10,7 @@ const quantity = document.querySelector('.quantity');
 const preuser = sessionStorage.getItem("preuser");
 const searchInput = document.getElementById('searchInput');
 const replies = {
-  "hi": "Hi there!! What can i help u wid?",
+  "hi": "Hi there!! What can i help u wid? Type help for further assistance.",
   "how are you?": "I'm doing well, thnks for asking! What abt u?",
   "bye": "Goodbye! Have a great day!",
   "help": "1. Adding product to cart problem .\n2. Remove from cart . \n 3. Increase product quantity.\n 4.Search for a particular product. \n 5. Problems more than above contavt us on our tollfree helpline number- 1800 256 178 .PRESS THE OPTION NUMBER TO CONTINUE",
@@ -24,13 +24,15 @@ const replies = {
 const chatMessages = document.getElementById("chat-messages");
 const userInput = document.getElementById("user-input");
 const sendButton = document.getElementById("send-button");
-
+const chatContainer=document.getElementById("chat-container")
 
 openShopping.addEventListener('click', () => {
   body.classList.add('active');
+  chatContainer.style.display='none';
 })
 closeShopping.addEventListener('click', () => {
   body.classList.remove('active');
+  chatContainer.style.display='block';
 })
 
 // Function to get user's cart from local storage
@@ -54,7 +56,7 @@ function initApp() {
     document.getElementById("user").textContent = preuser;
     reloadCart();
   }
-  if (preuser === null) {
+  if (preuser == null) {
     window.location.href = 'login.html';
   }
   else {
