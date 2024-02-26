@@ -10,12 +10,13 @@ body {
     height: 100vh;
 }
 
+
 form {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 228px;
 }
 
 h1 {
@@ -55,5 +56,20 @@ button:hover {
 
 .register-btn {
     margin-top: 50px;
-    width: 300px;
+    width: 230px;
+}
+
+@media(min-width:400px) {
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+
+    .register-btn {
+        margin-top: 50px;
+        width: 300px;
+    }
 }

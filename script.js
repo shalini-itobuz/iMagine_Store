@@ -119,32 +119,32 @@ function reloadCart() {
       let newDiv = document.createElement('li');
 
       // Creating image div
-      let imageDiv = document.createElement('div');
-      let image = document.createElement('img');
+      const imageDiv = document.createElement('div');
+      const image = document.createElement('img');
       image.src = `image/${value.image}`;
       imageDiv.appendChild(image);
 
       // Creating name div
-      let nameDiv = document.createElement('div');
+      const nameDiv = document.createElement('div');
       nameDiv.textContent = value.name;
 
       // Creating price div
-      let priceDiv = document.createElement('div');
+      const priceDiv = document.createElement('div');
       priceDiv.textContent = value.price.toLocaleString();
 
       // Creating quantity div
-      let quantityDiv = document.createElement('div');
-      let minusButton = document.createElement('button');
+      const quantityDiv = document.createElement('div');
+      const minusButton = document.createElement('button');
       minusButton.textContent = '-';
       minusButton.onclick = function () {
         changeQuantity(key, value.quantity - 1);
       };
 
       //Creating quantity div
-      let countDiv = document.createElement('div');
+      const countDiv = document.createElement('div');
       countDiv.classList.add('count');
       countDiv.textContent = value.quantity;
-      let plusButton = document.createElement('button');
+      const plusButton = document.createElement('button');
       plusButton.textContent = '+';
       plusButton.onclick = function () {
         changeQuantity(key, value.quantity + 1);
@@ -190,9 +190,7 @@ function handleSuccessfulLogin(username) {
   window.location.href = 'index.html';
 }
 
-initApp();
 
-export { handleSuccessfulLogin };
 
 
 
@@ -277,5 +275,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+initApp();
 
+export { handleSuccessfulLogin };
 

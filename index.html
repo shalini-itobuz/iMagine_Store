@@ -7,23 +7,23 @@
     <title>iMagine</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
-  <body class="">
+  <body>
     <div class="container">
       <div class="search">
         <input type="text" id="searchInput" placeholder="Search products..." />
         <button id="searchButton">Search</button>
       </div>
       <header>
-        <div></div>
+        <div class="cartImg"></div>
         <button class="login-btn" id="login">Login</button>
         <h1>iMagine Store</h1>
-        <div class="shopping">
+        <div class="shopping" style="position: relative">
           <img
             src="./image/shopping-cart-outline-svgrepo-com.svg"
             alt="cart logo"
+            style="width: 100%"
           />
-          <span class="quantity">0</span>
+          <div class="quantity" style="position: absolute">0</div>
         </div>
         <div style="display: flex; flex-direction: column">
           <img style="width: 5%" src="./image/person.svg" alt="person" />
