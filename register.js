@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
             
             const existingUser = users.find((user) => user.username === username);
             if (existingUser) {
-                console.log("User already exists, cannot register again with the same username.");
                 alert("User already exists, cannot register again with the same username.");
                 return;
             }
@@ -86,9 +85,8 @@ document.addEventListener("DOMContentLoaded", function () {
             // Redirect to the login section
             window.location.href = "login.html";
         } else {
-            console.log("OTP Not Matched");
+            alert("OTP Not Matched");
             // Handle failed OTP validation
-            console.log("OTP entered is incorrect. Please try again.");
         }
     });
 
