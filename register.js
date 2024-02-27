@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // Validate if the email entered matches the email used for OTP generation
         const registeredEmail = sessionStorage.getItem("registeredEmail");
         if (email !== registeredEmail) {
-            console.log("Email does not match the registered email.");
             alert("Please use the registered email to generate OTP.");
             return;
         }
@@ -53,8 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (enteredOTP === generatedOTP) {
             console.log("OTP Matched");
             // Handle successful OTP validation
-            console.log("Account created successfully!");
-
             // Retrieve existing users from local storage or initialize an empty array
             let users = localStorage.getItem("users");
             users = users ? JSON.parse(users) : [];
@@ -67,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
             
             const existingUser = users.find((user) => user.username === username);
             if (existingUser) {
-                console.log("User already exists, cannot register again with the same username.");
                 alert("User already exists, cannot register again with the same username.");
                 return;
             }
@@ -86,9 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Redirect to the login section
             window.location.href = "login.html";
         } else {
-            console.log("OTP Not Matched");
-            // Handle failed OTP validation
-            console.log("OTP entered is incorrect. Please try again.");
+           alert("OTP entered is incorrect. Please try again.");
         }
     });
 
