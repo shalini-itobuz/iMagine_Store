@@ -56,7 +56,7 @@ function initApp() {
     document.getElementById("user").textContent = preuser;
     reloadCart();
   }
-  if (preuser == null) {
+  if (preuser === null) {
     window.location.href = 'login.html';
   }
   else {
@@ -98,7 +98,7 @@ function initApp() {
 // Function to add an item to the cart
 function addToCart(key) {
 
-  if (listCards[key] == null) {
+  if (listCards[key] === null) {
     listCards[key] = JSON.parse(JSON.stringify(products[key]));
     listCards[key].quantity = 1;
   }
